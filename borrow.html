@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+  <script src="index.js">
+    const validateForm = () => {
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var book = document.getElementById("book").value;
+
+      borrowBook(book, email, name)
+    }
+  </script>
+  <title>LendLibrary | Book Borrow</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('https://source.unsplash.com/2140x1440/?library,background');
+      background-repeat: no-repeat;
+      background-size: 100%;
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+    }
+
+    .heading-box {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      margin: 20px auto;
+      width: fit-content;
+    }
+
+    h1 {
+      color: #333333;
+      font-size: 48px;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      background: linear-gradient(to right, #30cfd0 0%, #330867 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin: 0;
+      padding: 10px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #cccccc;
+      border-radius: 3px;
+      box-sizing: border-box;
+    }
+
+    .form-group button {
+      padding: 10px 20px;
+      background-color: red;
+      color: #ffffff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .form-group button:hover {
+      background-color: orange;
+    }
+
+    header {
+      background-color: rgb(244, 236, 236);
+      padding: 10px;
+    }
+
+    footer {
+      background-color: rgb(244, 236, 236);
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="text-gray-600 body-font">
+    <div class="flex flex-row mx-auto items-center">
+      <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+        <img class="w-16 h-16" src="images/logo-book.png">
+        <span class="ml-3 text-xl">Lend Library</span>
+      </a>
+      <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
+        <a href="index.html" class="mr-5 hover:text-gray-900">Home</a>
+        <a href="catalog.html"  class="mr-5 hover:text-gray-900">Book Catalog</a>
+        <a href="login.html" class="mr-5 hover:text-gray-900">Login/ Signup</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BODY -->
+  <div class="heading-box flex flex-row items-center">
+    <img src="images/owl-hero.png" alt="logo" class="h-10 w-10"/>
+    <h1>Lend Library - Book Borrow</h1>
+  </div>
+
+  <div class="container">
+    <form>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="book">Book Title:</label>
+        <input type="text" id="book" name="book" required>
+      </div>
+      <div class="form-group">
+        <button type="submit" onclick="return validateForm()">Borrow Book</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="text-gray-600 body-font">
+    <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+      <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+        <img class="w-10 h-10" src="images/logo-book.png">
+        <span class="ml-3 text-xl">Lend Library</span>
+      </a>
+      <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">&copy; 2024 LendLibrary</p>
+      <div class="sm:ml-auto sm:mt-0 mt-4">
+        <p class="text-sm text-gray-500">Made with <span class="text-red-500">&#9829;</span> by Harsh</p>
+    </div>
+    </div>
+</footer>
+</body>
+
+</html>
